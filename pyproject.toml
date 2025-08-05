@@ -1,0 +1,17 @@
+[project]
+name = "curso-ebac"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Murillo",email = "sousamurillo4655@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[all] (>=0.116.0,<0.117.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
