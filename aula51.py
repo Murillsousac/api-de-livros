@@ -29,17 +29,12 @@ def post_livros(id_livro: int, livro: livro):
         return {"message": "O livro foi criado com sucesso"}
 
 @app.put("/atualiza/{id_livro}")
-def put_livros(id_livro: int, nome_livro: str, autor_livro: str, ano_livro: int):
+def put_livros(id_livro: int, livro: livro):
     meu_livro = meus_livros.get(id_livro)
     if not meu_livro:
         raise HTTPException(status_code=400, detail="esse livro não foi encontrado")
     else:
-        if nome_livro:
-            meu_livro["nome_livro"] = nome_livro
-        if autor_livro:
-            meu_livro["autor_livro"] = autor_livro
-        if ano_livro:
-            meu_livro["ano_livro"] = ano_livro 
+        meus_livros[id_livro] = livro.dict() 
 
         return {"message": "As informações do seu livro foram atualizadas com sucesso!"}
 
